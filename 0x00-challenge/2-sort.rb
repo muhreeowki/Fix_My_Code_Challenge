@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 ###
 #
 #  Sort integer arguments (ascending) 
@@ -12,23 +13,11 @@ ARGV.each do |arg|
     # convert to integer
     i_arg = arg.to_i
     
-    # insert result at the right position
-    is_inserted = false
-    i = 0
-    l = result.size
-    if result[i] <= i_arg
-        result.insert(i, i_arg)
-        next
-    while !is_inserted && i < l do
-        if result[i + 1] <= i_arg
-            i += 1
-        else
-            result.insert(i, i_arg)
-            is_inserted = true
-            break
-        end
-    end
+    # insert iterger into the result list
     result << i_arg if !is_inserted
 end
+
+# sort the result
+result.sort
 
 puts result
